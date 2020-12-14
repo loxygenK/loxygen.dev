@@ -90,7 +90,7 @@ jobs:
         run: yarn lint:prettier
   
   deploy:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     needs: [eslint, stylelint]
     
     steps:
