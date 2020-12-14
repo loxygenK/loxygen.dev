@@ -9,7 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    needs: [eslint, stylelint]
 
     steps:
       - name: Dive into the repo
