@@ -3,7 +3,7 @@ import * as path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
-const isProduction = process.env.NODE_ENV = "production";
+const isProduction = process.env.NODE_ENV == "production";
 const baseURL = process.env.BASE_URL ?? "/";
 
 const config: Configuration = {
