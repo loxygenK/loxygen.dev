@@ -94,6 +94,8 @@ jobs:
     needs: [eslint, stylelint]
     
     steps:
+      - name: Dive into the repo
+        uses: actions/checkout@v2
       - name: Deploy to vercel (preview build)
         uses: amondnet/vercel-action@v20.0.0
         with:
