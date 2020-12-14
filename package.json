@@ -45,6 +45,14 @@
     "build": "yarn build:prod",
     "build:prod": "env NODE_ENV=production webpack",
     "build:dev": "webpack",
+    "lint": "yarn lint:es && yarn lint:style && yarn lint:prettier",
+    "lint:es": "eslint src/**/*.tsx",
+    "lint:style": "stylelint src/**/*.tsx",
+    "lint:prettier": "prettier -c src/**/*.tsx",
+    "fix": "yarn fix:es && yarn fix:style && yarn fix:prettier",
+    "fix:es": "eslint --fix src/**/*.tsx",
+    "fix:style": "stylelint --fix src/**/*.tsx",
+    "fix:prettier": "prettier -w src/**/*.tsx",
     "start": "yarn dev",
     "dev": "webpack serve"
   }
