@@ -10,6 +10,21 @@ const config: Configuration = {
 	entry: {
 		index: path.join(__dirname, "src", "index.tsx")
 	},
+	resolve: {
+		extensions: [".tsx", ".ts", ".js"]
+	},
+	module: {
+		rules: [
+			{
+				test: /\.tsx?$/,
+				exclude: /node_modules/,
+				use: [
+					{ loader: "babel-loader" },
+					{ loader: "ts-loader" }
+				]
+			}
+		]
+	},
 	output: {
 		path: path.join(__dirname, "build"),
 		publicPath: baseURL,
