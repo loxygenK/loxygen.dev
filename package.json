@@ -1,0 +1,9 @@
+{
+  "name": "flisans-blog",
+  "version": "1.0.0",
+  "description": "Just my blog. Built in react.",
+  "main": "index.ts",
+  "repository": "https://github.com/loxygenK/blog",
+  "author": "loxygenK <loxygen.k@gmail.com>",
+  "license": "MIT"
+}
