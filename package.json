@@ -36,8 +36,5 @@
     "build": "webpack",
 		"start": "yarn dev",
 		"dev": "webpack serve"
-  },
-	"engines": {
-		"node": "14.x"
-	}
+  }
 }
