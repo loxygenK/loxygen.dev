@@ -1,5 +1,7 @@
 import { Configuration } from "webpack";
 import * as path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV = "production";
 const baseURL = process.env.BASE_URL ?? "/";
@@ -13,6 +15,21 @@ const config: Configuration = {
 	resolve: {
 		extensions: [".tsx", ".ts", ".js"]
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			inject: "head",
+			minify: isProduction,
+			template: path.join(__dirname, "src", "template.html"),
+			scriptLoading: "defer"
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: path.join(__dirname, "public")
+				}
+			]
+		})
+	],
 	module: {
 		rules: [
 			{
