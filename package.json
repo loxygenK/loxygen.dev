@@ -33,11 +33,8 @@
     "tslib": "^2.0.3"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "node -v && webpack",
 		"start": "yarn dev",
 		"dev": "webpack serve"
-  },
-	"engines": {
-		"node": "12.x"
-	}
+  }
 }
