@@ -4,7 +4,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV == "production";
-const baseURL = process.env.BASE_URL ?? "/";
+const baseURL = (process.env.BASE_URL == null
+									? process.env.BASE_URL
+									: "/");
 
 const config: Configuration = {
 	target: "web",
