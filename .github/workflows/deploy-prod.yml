@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Dive into the repo
         uses: actions/checkout@v2
-      - name: Deploy to vercel (preview build)
+      - name: Deploy to vercel (production build)
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
