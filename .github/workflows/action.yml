@@ -91,7 +91,7 @@ jobs:
       - name: Run eslint
         run: yarn lint:prettier
   
-  preview-deploy:
+  previewdeploy:
     runs-on: ubuntu-latest
     needs: [eslint, stylelint]
     
