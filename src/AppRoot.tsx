@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
+import Splashscreen from "./pages/splash/SplashScreen";
 
 const AppRootWrapper = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const AppContentWrapper = styled.div`
 export const AppRoot = () => (
   <AppRootWrapper>
     <Header />
+    <Splashscreen />
     <AppContentWrapper>
       <h1>It works!</h1>
     </AppContentWrapper>
