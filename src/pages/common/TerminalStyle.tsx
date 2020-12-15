@@ -11,7 +11,7 @@ const UserKindCharacter = styled.span`
 `;
 
 const Cursor = styled.span`
-  margin-left: 0.5em;
+  margin-left: 0.1em;
   border-left: 2px solid #777;
   animation: 1s step-start infinite blink;
 
