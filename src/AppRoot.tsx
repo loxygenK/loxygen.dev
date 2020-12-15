@@ -5,6 +5,8 @@ import {Header} from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
 
 const AppRootWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   font-family: "M PLUS Rounded 1c", sans-serif;
   color: ${Colors.MainTextColor};
@@ -13,6 +15,7 @@ const AppRootWrapper = styled.div`
 
 const AppContentWrapper = styled.div`
   padding: 1em;
+  flex: 1;
 `;
 
 export const AppRoot = () => (
