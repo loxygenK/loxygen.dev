@@ -10,7 +10,12 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "paths": {
+      "@app/pages/*": ["pages/*"],
+      "@app/style/*": ["style/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
