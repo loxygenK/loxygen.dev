@@ -15,7 +15,10 @@ const config: Configuration = {
     index: path.join(__dirname, "src", "index.tsx")
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@app": path.resolve(__dirname, "src")
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

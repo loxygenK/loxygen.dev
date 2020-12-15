@@ -13,8 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
     "paths": {
-      "@app/pages/*": ["pages/*"],
-      "@app/style/*": ["style/*"]
+      "@app/*": ["./*"]
     }
   },
   "ts-node": {
