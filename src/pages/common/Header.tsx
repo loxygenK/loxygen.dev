@@ -1,13 +1,13 @@
-import * as React from "react"
+import * as React from "react";
 
-import * as Colors from "@app/style/Colors"
-import styled from "styled-components"
+import * as Colors from "@app/style/Colors";
+import styled from "styled-components";
 import TerminalStyle from "./TerminalStyle";
 
 const HeaderRoot = styled.div`
-  background-color: ${Colors.AccentBackground};
   padding: 2em;
   text-align: center;
+  background-color: ${Colors.AccentBackground};
 `;
 
 const HeaderTitle = styled.div`
@@ -24,4 +24,4 @@ export const Header = () => (
       Inspect what Flisan looks like
     </HeaderRoot>
   </header>
-)
+);
