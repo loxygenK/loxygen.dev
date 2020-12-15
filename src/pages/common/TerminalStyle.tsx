@@ -1,17 +1,12 @@
 import * as React from "react";
-import * as Colors from "@app/style/Colors";
 import styled from "styled-components";
 
 const TerminalStyleRoot = styled.div`
   font-family: "Fira Mono", monospace;
 `;
 
-const UserKindCharacter = styled.span`
-  color: ${Colors.SubTextColor};
-`;
-
 const Cursor = styled.span`
-  margin-left: 0.5em;
+  margin-left: 0.1em;
   border-left: 2px solid #777;
   animation: 1s step-start infinite blink;
 
@@ -25,21 +20,13 @@ const Cursor = styled.span`
   }
 `;
 
-const TerminalStyle = (props: { text: string; blinking?: boolean }) => {
-  const separated = props.text.split("$", 2);
-  const textComponent =
-    separated.length > 1 ? (
-      <>
-        {separated[0]}
-        <UserKindCharacter>$</UserKindCharacter>
-        {separated[1]}
-      </>
-    ) : (
-      <>{separated[0]}</>
-    );
+const TerminalStyle = (props: {
+  children?: React.ReactNode;
+  blinking?: boolean;
+}) => {
   return (
     <TerminalStyleRoot>
-      {textComponent}
+      {props.children}
       {props.blinking ? <Cursor /> : <></>}
     </TerminalStyleRoot>
   );

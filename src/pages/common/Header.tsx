@@ -2,7 +2,8 @@ import * as React from "react";
 
 import * as Colors from "@app/style/Colors";
 import styled from "styled-components";
-import TerminalStyle from "./TerminalStyle";
+import { TerminalInput } from "../miscs/TerminalInput";
+import { Command } from "@app/types/Command";
 
 const HeaderRoot = styled.div`
   padding: 1em;
@@ -15,12 +16,36 @@ const HeaderTitle = styled.div`
   font-weight: 700;
 `;
 
-export const Header = () => (
-  <header>
-    <HeaderRoot>
-      <HeaderTitle>
-        <TerminalStyle text="[visitor@flisan ~] $" blinking />
-      </HeaderTitle>
-    </HeaderRoot>
-  </header>
-);
+type HeaderState = {
+  typedChar: string;
+};
+
+export class Header extends React.Component<
+  Record<string, never>,
+  HeaderState
+> {
+  readonly promptHeader = "[visitor@flisan ~]$ ";
+
+  constructor() {
+    super({});
+    this.state = { typedChar: "" };
+  }
+
+  render() {
+    return (
+      <header>
+        <HeaderRoot>
+          <HeaderTitle>
+            <TerminalInput
+              prompt="[visitor@flisan ~]$ "
+              onEnter={(e) => {
+                console.log(e);
+                console.log(Command.parse(e));
+              }}
+            />
+          </HeaderTitle>
+        </HeaderRoot>
+      </header>
+    );
+  }
+}
