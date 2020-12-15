@@ -1,0 +1,68 @@
+import * as React from "react";
+import styled from "styled-components";
+import TerminalStyle from "../common/TerminalStyle";
+
+const UnstyledInput = styled.input`
+  width: 75%;
+  font: inherit;
+  text-align: center;
+  background: inherit;
+  border: none;
+  outline: none;
+
+  transition: 0.5s;
+`;
+
+type TerminalInputProps = {
+  prompt?: string;
+  onEnter: (command: string) => void;
+};
+
+type TerminalInputState = {
+  typedChar: string;
+};
+
+export class TerminalInput extends React.Component<
+  TerminalInputProps,
+  TerminalInputState
+> {
+  readonly prompt: string;
+
+  constructor(props: TerminalInputProps) {
+    super(props);
+    this.prompt = props.prompt == null ? "" : props.prompt;
+    this.state = { typedChar: "" };
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleChange(e: any) {
+    const newValue: string = e.target.value;
+
+    if (!newValue.startsWith(this.prompt)) {
+      return;
+    }
+    const filteredValue = newValue.substring(this.prompt.length);
+    this.setState({ typedChar: filteredValue });
+  }
+
+  handleSubmit(e: React.KeyboardEvent) {
+    if (e.key == "Enter") {
+      this.props.onEnter(this.state.typedChar);
+      this.setState({ typedChar: "" });
+    } else if (e.key == "Escape") {
+      this.setState({ typedChar: "" });
+    }
+  }
+
+  render() {
+    return (
+      <TerminalStyle>
+        <UnstyledInput
+          value={this.prompt + this.state.typedChar}
+          onChange={(e) => this.handleChange(e)}
+          onKeyDown={(e) => this.handleSubmit(e)}
+        />
+      </TerminalStyle>
+    );
+  }
+}
