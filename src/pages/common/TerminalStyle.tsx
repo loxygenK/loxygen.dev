@@ -25,21 +25,13 @@ const Cursor = styled.span`
   }
 `;
 
-const TerminalStyle = (props: { text: string; blinking?: boolean }) => {
-  const separated = props.text.split("$", 2);
-  const textComponent =
-    separated.length > 1 ? (
-      <>
-        {separated[0]}
-        <UserKindCharacter>$</UserKindCharacter>
-        {separated[1]}
-      </>
-    ) : (
-      <>{separated[0]}</>
-    );
+const TerminalStyle = (props: {
+  children?: React.ReactNode;
+  blinking?: boolean;
+}) => {
   return (
     <TerminalStyleRoot>
-      {textComponent}
+      {props.children}
       {props.blinking ? <Cursor /> : <></>}
     </TerminalStyleRoot>
   );
