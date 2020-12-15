@@ -3,13 +3,15 @@ import styled from "styled-components";
 import * as Colors from "@app/style/Colors";
 import TerminalStyle from "../common/TerminalStyle";
 
-const message = "ssh visitor@flisan startx".replace(/ /g, "\u00a0");
+const message = "ssh visitor@flisan startx";
 const charDelay = 0.05;
 
 const SplashscreenRoot = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
+  box-sizing: border-box;
   display: flex;
   align-items: center;
 
@@ -18,9 +20,14 @@ const SplashscreenRoot = styled.div`
   width: 100vw;
   height: 100vh;
 
+  padding: 0.2em;
+
   font-size: 2.3em;
   font-weight: 700;
   color: ${Colors.WhiteTextColor};
+  text-align: center;
+
+  overflow-wrap: anywhere;
   background-color: ${Colors.BlackBackground};
 
   animation: 0.35s slideout ${charDelay * message.length + 0.5}s forwards;
