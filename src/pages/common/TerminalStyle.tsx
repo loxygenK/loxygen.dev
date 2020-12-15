@@ -7,7 +7,7 @@ const TerminalStyleRoot = styled.div`
 `;
 
 const UserKindCharacter = styled.span`
-  color: ${Colors.SubTextColor}
+  color: ${Colors.SubTextColor};
 `;
 
 const Cursor = styled.span`
@@ -25,18 +25,23 @@ const Cursor = styled.span`
   }
 `;
 
-const TerminalStyle = (props: { text: string; blinking?: boolean }) => { 
+const TerminalStyle = (props: { text: string; blinking?: boolean }) => {
   const separated = props.text.split("$", 2);
-  const textComponent = (
-    separated.length > 1
-      ? (<>{separated[0]}<UserKindCharacter>$</UserKindCharacter>{separated[1]}</>)
-      : (<>{separated[0]}</>)
-  )
+  const textComponent =
+    separated.length > 1 ? (
+      <>
+        {separated[0]}
+        <UserKindCharacter>$</UserKindCharacter>
+        {separated[1]}
+      </>
+    ) : (
+      <>{separated[0]}</>
+    );
   return (
     <TerminalStyleRoot>
       {textComponent}
       {props.blinking ? <Cursor /> : <></>}
     </TerminalStyleRoot>
-  )
+  );
 };
 export default TerminalStyle;
