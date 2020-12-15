@@ -2,7 +2,6 @@ import * as React from "react";
 
 import * as Colors from "@app/style/Colors";
 import styled from "styled-components";
-import TerminalStyle from "./TerminalStyle";
 import { TerminalInput } from "../miscs/TerminalInput";
 import { Command } from "@app/types/Command";
 

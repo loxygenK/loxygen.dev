@@ -1,13 +1,8 @@
 import * as React from "react";
-import * as Colors from "@app/style/Colors";
 import styled from "styled-components";
 
 const TerminalStyleRoot = styled.div`
   font-family: "Fira Mono", monospace;
-`;
-
-const UserKindCharacter = styled.span`
-  color: ${Colors.SubTextColor};
 `;
 
 const Cursor = styled.span`
