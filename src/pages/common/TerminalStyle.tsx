@@ -1,8 +1,13 @@
 import * as React from "react";
+import * as Colors from "@app/style/Colors";
 import styled from "styled-components";
 
 const TerminalStyleRoot = styled.div`
   font-family: "Fira Mono", monospace;
+`;
+
+const UserKindCharacter = styled.span`
+  color: ${Colors.SubTextColor}
 `;
 
 const Cursor = styled.span`
@@ -20,10 +25,18 @@ const Cursor = styled.span`
   }
 `;
 
-const TerminalStyle = (props: { text: string; blinking?: boolean }) => (
-  <TerminalStyleRoot>
-    {props.text}
-    {props.blinking ? <Cursor /> : <></>}
-  </TerminalStyleRoot>
-);
+const TerminalStyle = (props: { text: string; blinking?: boolean }) => { 
+  const separated = props.text.split("$", 2);
+  const textComponent = (
+    separated.length > 1
+      ? (<>{separated[0]}<UserKindCharacter>$</UserKindCharacter>{separated[1]}</>)
+      : (<>{separated[0]}</>)
+  )
+  return (
+    <TerminalStyleRoot>
+      {textComponent}
+      {props.blinking ? <Cursor /> : <></>}
+    </TerminalStyleRoot>
+  )
+};
 export default TerminalStyle;

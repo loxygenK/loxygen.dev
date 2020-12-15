@@ -1,6 +1,7 @@
 export const MainBackground = "#e8ebed";
 export const AccentBackground = "#ccdaeb";
 export const MainTextColor = "#2d2d2e";
+export const SubTextColor = "#78788a";
 export const PrimaryAccentColor = "#376dab";
 
 // TODO: Is this really ok?
