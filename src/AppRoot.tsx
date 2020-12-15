@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {Footer} from "./pages/common/Footer";
-import {Header} from "./pages/common/Header";
-import * as Colors from "./style/Colors";
+import {Footer} from "@app/pages/common/Footer";
+import {Header} from "@app/pages/common/Header";
+import * as Colors from "@app/style/Colors";
 
 const AppRootWrapper = styled.div`
   min-height: 100vh;
