@@ -3,12 +3,14 @@ import styled from "styled-components";
 import TerminalStyle from "../common/TerminalStyle";
 
 const UnstyledInput = styled.input`
-  width: 75%;
+  width: 100%;
+
   font: inherit;
-  text-align: center;
+  text-align: inherit;
   background: inherit;
-  border: none;
-  outline: none;
+  color: inherit;
+  border: inherit;
+  outline: inherit;
 
   transition: 0.5s;
 `;
