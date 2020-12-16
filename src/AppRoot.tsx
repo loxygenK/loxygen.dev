@@ -4,12 +4,14 @@ import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
 import Splashscreen from "./pages/splash/SplashScreen";
+import {Gretting} from "./pages/elements/greeting/Greeting";
+import {Heading} from "./pages/common/Heading";
 
 const AppRootWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   color: ${Colors.MainTextColor};
   background-color: ${Colors.MainBackground};
 `;
@@ -28,9 +30,11 @@ const AppContentWrapper = styled.div`
 export const AppRoot = () => (
   <AppRootWrapper>
     <Header />
+    {/*<Splashscreen />*/}
     <Expand>
       <AppContentWrapper>
-        <h1>It works!</h1>
+        <Gretting />
+        <Heading anchor="fundamental" caption="自己紹介"/>
       </AppContentWrapper>
     </Expand>
     <Footer />
