@@ -7,6 +7,9 @@ import { Command } from "@app/types/Command";
 
 const HeaderRoot = styled.div`
   padding: 1em;
+  margin-bottom: 1.5em;
+  width: 100vw;
+  box-sizing: border-box;
   color: ${Colors.WhiteTextColor};
   text-align: center;
   background-color: ${Colors.AccentBackground};

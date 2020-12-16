@@ -14,18 +14,25 @@ const AppRootWrapper = styled.div`
   background-color: ${Colors.MainBackground};
 `;
 
-const AppContentWrapper = styled.div`
+const Expand = styled.div`
   flex: 1;
+`;
+
+const AppContentWrapper = styled.div`
   padding: 1em;
+  max-width: 45em;
+  margin: 0 auto;
+  word-wrap: break-word;
 `;
 
 export const AppRoot = () => (
   <AppRootWrapper>
     <Header />
-    <Splashscreen />
-    <AppContentWrapper>
-      <h1>It works!</h1>
-    </AppContentWrapper>
+    <Expand>
+      <AppContentWrapper>
+        <h1>It works!</h1>
+      </AppContentWrapper>
+    </Expand>
     <Footer />
   </AppRootWrapper>
 );
