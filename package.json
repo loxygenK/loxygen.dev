@@ -60,5 +60,8 @@
     "fix:prettier": "prettier -w src/**/*.{ts,tsx}",
     "start": "yarn dev",
     "dev": "webpack serve"
+  },
+  "browser": {
+    "buffer": false
   }
 }
