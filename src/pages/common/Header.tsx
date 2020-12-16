@@ -7,9 +7,9 @@ import { Command } from "@app/types/Command";
 
 const HeaderRoot = styled.div`
   padding: 1em;
+  color: ${Colors.WhiteTextColor};
   text-align: center;
   background-color: ${Colors.AccentBackground};
-  color: ${Colors.WhiteTextColor};
 `;
 
 const HeaderTitle = styled.div`

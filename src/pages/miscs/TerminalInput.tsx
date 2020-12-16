@@ -6,9 +6,9 @@ const UnstyledInput = styled.input`
   width: 100%;
 
   font: inherit;
+  color: inherit;
   text-align: inherit;
   background: inherit;
-  color: inherit;
   border: inherit;
   outline: inherit;
 
