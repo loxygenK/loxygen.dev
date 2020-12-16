@@ -9,6 +9,7 @@ const HeaderRoot = styled.div`
   padding: 1em;
   text-align: center;
   background-color: ${Colors.AccentBackground};
+  color: ${Colors.WhiteTextColor};
 `;
 
 const HeaderTitle = styled.div`
