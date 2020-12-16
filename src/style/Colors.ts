@@ -1,5 +1,5 @@
-export const MainBackground = "#e8ebed";
-export const AccentBackground = "#ccdaeb";
+export const MainBackground = "#ffffff";
+export const AccentBackground = "#3e4f63";
 export const BlackBackground = "#27272e";
 export const MainTextColor = "#2d2d2e";
 export const SubTextColor = "#78788a";
