@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import {MyIcon} from "./MyIcon";
+import { MyIcon } from "./MyIcon";
 import * as Colors from "@app/style/Colors";
 
 const GreetingRoot = styled.div`
@@ -10,7 +10,7 @@ const GreetingRoot = styled.div`
 const GreetingMessage = styled.div`
   font-size: 1.25em;
   font-weight: bold;
-  color: ${Colors.SubTextColor}
+  color: ${Colors.SubTextColor};
 `;
 
 const GreetingMessageList = [
@@ -21,13 +21,18 @@ const GreetingMessageList = [
   "Hello, visitor! Take your time if you're free!",
   "Beep-beep, login succeeded, X session started...",
   "[flisan@flisan ~]$ greet visitor --with-thanks",
-]
+];
 
 export const Gretting = () => (
   <GreetingRoot>
-    <MyIcon /><br />
+    <MyIcon />
+    <br />
     <GreetingMessage>
-      {GreetingMessageList[Math.floor(Math.random() * GreetingMessageList.length)]}
+      {
+        GreetingMessageList[
+          Math.floor(Math.random() * GreetingMessageList.length)
+        ]
+      }
     </GreetingMessage>
   </GreetingRoot>
-)
+);

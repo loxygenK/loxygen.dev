@@ -4,8 +4,8 @@ import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
 import Splashscreen from "./pages/splash/SplashScreen";
-import {Gretting} from "./pages/elements/greeting/Greeting";
-import {Heading} from "./pages/common/Heading";
+import { Gretting } from "./pages/elements/greeting/Greeting";
+import { Heading } from "./pages/common/Heading";
 
 const AppRootWrapper = styled.div`
   display: flex;
@@ -21,8 +21,8 @@ const Expand = styled.div`
 `;
 
 const AppContentWrapper = styled.div`
-  padding: 1em;
   max-width: 45em;
+  padding: 1em;
   margin: 0 auto;
   word-wrap: break-word;
 `;
@@ -34,7 +34,7 @@ export const AppRoot = () => (
     <Expand>
       <AppContentWrapper>
         <Gretting />
-        <Heading anchor="fundamental" caption="自己紹介"/>
+        <Heading anchor="fundamental" caption="自己紹介" />
       </AppContentWrapper>
     </Expand>
     <Footer />
