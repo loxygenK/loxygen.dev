@@ -4,28 +4,39 @@ import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
 import Splashscreen from "./pages/splash/SplashScreen";
+import { Gretting } from "./pages/elements/greeting/Greeting";
+import { Heading } from "./pages/common/Heading";
 
 const AppRootWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
   color: ${Colors.MainTextColor};
   background-color: ${Colors.MainBackground};
 `;
 
-const AppContentWrapper = styled.div`
+const Expand = styled.div`
   flex: 1;
+`;
+
+const AppContentWrapper = styled.div`
+  max-width: 45em;
   padding: 1em;
+  margin: 0 auto;
+  word-wrap: break-word;
 `;
 
 export const AppRoot = () => (
   <AppRootWrapper>
     <Header />
     <Splashscreen />
-    <AppContentWrapper>
-      <h1>It works!</h1>
-    </AppContentWrapper>
+    <Expand>
+      <AppContentWrapper>
+        <Gretting />
+        <Heading anchor="fundamental" caption="自己紹介" />
+      </AppContentWrapper>
+    </Expand>
     <Footer />
   </AppRootWrapper>
 );
