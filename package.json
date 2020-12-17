@@ -54,11 +54,10 @@
     "build:dev": "webpack",
     "lint": "yarn lint:es && yarn lint:style && yarn lint:prettier",
     "lint:es": "find src/ -regex '.+\\.[jt]sx?' | xargs eslint",
-    "lint:style": "find src/ -regex '.+\\.[jt]sx?' | xargs stylelint",
+    "lint:style": "find src/ -regex '.+\\.[jt]sx' | xargs stylelint",
     "lint:prettier": "find src/ -regex '.+\\.[jt]sx?' | xargs prettier -c",
-    "fix": "yarn fix:es && yarn fix:style && yarn fix:prettier",
+    "fix": "yarn fix:es && yarn lint:style && yarn fix:prettier",
     "fix:es": "find src/ -regex '.+\\.[jt]sx?' | xargs eslint --fix",
-    "fix:style": "find src/ -regex '.+\\.[jt]sx?' | xargs stylelint --fix",
     "fix:prettier": "find src/ -regex '.+\\.[jt]sx?' | xargs prettier -w",
     "start": "yarn dev",
     "dev": "webpack serve"
