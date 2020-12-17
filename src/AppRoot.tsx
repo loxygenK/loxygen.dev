@@ -30,7 +30,7 @@ const AppContentWrapper = styled.div`
 export const AppRoot = () => (
   <AppRootWrapper>
     <Header />
-    {/*<Splashscreen />*/}
+    <Splashscreen />
     <Expand>
       <AppContentWrapper>
         <Gretting />
