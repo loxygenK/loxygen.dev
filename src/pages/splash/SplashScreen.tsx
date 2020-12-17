@@ -7,11 +7,10 @@ const message = "ssh visitor@flisan startx";
 const charDelay = 0.05;
 
 const SplashscreenRoot = styled.div`
-  z-index: 999;
-
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
 
   box-sizing: border-box;
   display: flex;
