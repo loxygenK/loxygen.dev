@@ -31,7 +31,8 @@ const SplashscreenRoot = styled.div`
   overflow-wrap: anywhere;
   background-color: ${Colors.BlackBackground};
 
-  animation: 0.5s cubic-bezier(.14,.59,.4,.83) slideout ${charDelay * message.length + 0.5}s forwards;
+  animation: 0.5s cubic-bezier(0.14, 0.59, 0.4, 0.83) slideout
+    ${charDelay * message.length + 0.5}s forwards;
 
   @keyframes slideout {
     from {
