@@ -10,6 +10,7 @@ const SplashscreenRoot = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
 
   box-sizing: border-box;
   display: flex;
