@@ -5,7 +5,7 @@ import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
 import Splashscreen from "./pages/splash/SplashScreen";
 import { Gretting } from "./pages/elements/greeting/Greeting";
-import { Heading } from "./pages/common/Heading";
+import { Heading } from "./pages/common/outline/Heading";
 
 const AppRootWrapper = styled.div`
   display: flex;
