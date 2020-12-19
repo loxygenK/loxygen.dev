@@ -5,9 +5,11 @@ import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
 import Splashscreen from "./pages/splash/SplashScreen";
 import { Gretting } from "./pages/elements/greeting/Greeting";
-import { Section } from "./pages/common/outline/Section";
 import { Introduction } from "./pages/elements/introduction/Introduction";
-import { DataSet, fetchFromDefaultDataSet } from "./types/datas/RemoteFetcher";
+import { DataSet, fetchAchievements, fetchFundamentals, fetchTechnical } from "./types/datas/RemoteFetcher";
+import {Technical} from "./types/datas/Techinal";
+import {Achievement} from "./types/datas/Acheivement";
+import {Fundamental} from "./types/datas/Fundamental";
 
 const AppRootWrapper = styled.div`
   display: flex;
@@ -34,32 +36,35 @@ const AppContentWrapper = styled.div`
 `;
 
 type State = {
-  data?: Map<DataSet, any | null>;
+  achievement?: Achievement;
+  fundamental?: Fundamental;
+  technical?: Technical;
+  loading: boolean;
 };
 
 export class AppRoot extends React.Component<Record<string, unknown>, State> {
-  constructor({}) {
+  constructor() {
     super({});
     this.state = {
-      data: undefined,
+      loading: true
     };
   }
 
   componentDidMount() {
     Promise.all([
-      fetchFromDefaultDataSet("achievements"),
-      fetchFromDefaultDataSet("fundamental"),
-      fetchFromDefaultDataSet("technical"),
-    ]).then((value: [object | null, object | null, object | null]) => {
-      console.log("Fetched!");
-      this.setState({
-        data: new Map([
-          ["achievements", value[0]],
-          ["fundamental", value[1]],
-          ["technical", value[2]],
-        ]),
-      });
-    });
+      fetchAchievements(),
+      fetchFundamentals(),
+      fetchTechnical(),
+    ]).then(
+      ([achive, fundamental, technical]) => {
+        this.setState({
+          achievement: achive,
+          fundamental: fundamental,
+          technical: technical,
+          loading: false,
+        });
+      }
+    )
   }
 
   render() {
@@ -79,14 +84,13 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   }
 
   buildContent(): React.ReactNode {
-    console.log(this.state.data);
-    if(this.state.data == null) return (
+    if(this.state.loading) return (
       <Centerize>This is taking unexpectedly long time...</Centerize>
     );
-    console.log(this.state.data.get("fundamental"));
+    if(this.state.fundamental == null) return <Centerize>boom</Centerize>;
     return (
       <>
-        <Introduction data={this.state.data.get("fundamental")} />
+        <Introduction data={this.state.fundamental} />
       </>
     )
   }
