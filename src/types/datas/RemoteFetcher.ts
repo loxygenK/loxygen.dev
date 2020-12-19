@@ -18,19 +18,23 @@ const DataSetURLs: Map<DataSet, string> = new Map([
   ],
 ]);
 
-export async function fetchFromDefaultDataSet(dataSet: DataSet) {
+export async function fetchFromDefaultDataSet(dataSet: DataSet): Promise<object | null> {
   // Get url; if the url is available, stop the operation
-  const url = DataSetURLs.get(dataSet);
+  const url =
+    "https://raw.githubusercontent.com/loxygenK/loxygenk.d" +
+    `/main/${dataSet}.yaml`;
   if (url == null) return null;
 
   // Get from remote; if failed, return null
   const result = await axios.get(url);
-  if (result.status !== 200 || typeof result.data === "object") return null;
+  if (result.status !== 200) return null;
 
   // Parse fetched data; if the data was invalid, return null
   const parsedData = yaml.safeLoad(result.data);
   if (typeof parsedData !== "object") return null;
-
+  console.log((parsedData as any).name);
+  console.log(typeof parsedData);
+  
   // Return the parsed data
   return parsedData;
 }

@@ -86,8 +86,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     console.log(this.state.data.get("fundamental"));
     return (
       <>
-        <Section caption="自己紹介" anchor="introduction">
-        </Section>
+        <Introduction data={this.state.data.get("fundamental")} />
       </>
     )
   }
