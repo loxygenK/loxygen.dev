@@ -44,6 +44,13 @@ const config: Configuration = {
           { loader: "babel-loader" },
           { loader: "ts-loader" }
         ]
+      },
+      {
+        test: "/\.module.css$/",
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader?modules" },
+        ]
       }
     ]
   },
