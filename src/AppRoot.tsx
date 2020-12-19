@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
 import * as Colors from "@app/style/Colors";
-import Splashscreen from "./pages/splash/SplashScreen";
 import { Gretting } from "./pages/elements/greeting/Greeting";
 import { Introduction } from "./pages/elements/introduction/Introduction";
-import { DataSet, fetchAchievements, fetchFundamentals, fetchTechnical } from "./types/datas/RemoteFetcher";
-import {Technical} from "./types/datas/Techinal";
-import {Achievement} from "./types/datas/Acheivement";
-import {Fundamental} from "./types/datas/Fundamental";
+import {
+  fetchAchievements,
+  fetchFundamentals,
+  fetchTechnical,
+} from "./types/datas/RemoteFetcher";
+import { Technical } from "./types/datas/Techinal";
+import { Achievement } from "./types/datas/Acheivement";
+import { Fundamental } from "./types/datas/Fundamental";
 
 const AppRootWrapper = styled.div`
   display: flex;
@@ -46,7 +49,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   constructor() {
     super({});
     this.state = {
-      loading: true
+      loading: true,
     };
   }
 
@@ -55,16 +58,14 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
       fetchAchievements(),
       fetchFundamentals(),
       fetchTechnical(),
-    ]).then(
-      ([achive, fundamental, technical]) => {
-        this.setState({
-          achievement: achive,
-          fundamental: fundamental,
-          technical: technical,
-          loading: false,
-        });
-      }
-    )
+    ]).then(([achive, fundamental, technical]) => {
+      this.setState({
+        achievement: achive,
+        fundamental: fundamental,
+        technical: technical,
+        loading: false,
+      });
+    });
   }
 
   render() {
@@ -84,14 +85,13 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   }
 
   buildContent(): React.ReactNode {
-    if(this.state.loading) return (
-      <Centerize>This is taking unexpectedly long time...</Centerize>
-    );
-    if(this.state.fundamental == null) return <Centerize>boom</Centerize>;
+    if (this.state.loading)
+      return <Centerize>This is taking unexpectedly long time...</Centerize>;
+    if (this.state.fundamental == null) return <Centerize>boom</Centerize>;
     return (
       <>
         <Introduction data={this.state.fundamental} />
       </>
-    )
+    );
   }
 }
