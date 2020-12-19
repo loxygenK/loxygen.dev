@@ -6,10 +6,12 @@ import { Technical } from "./Techinal";
 
 export type DataSet = "achievements" | "fundamental" | "technical";
 
-/* eslint-disable-next-line @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/ban-types */
 async function fetchFromDefaultDataSet(
   dataSet: DataSet
 ): Promise<object | undefined> {
+  /* eslint-enable */
+
   const url =
     "https://raw.githubusercontent.com/loxygenK/loxygenk.d" +
     `/main/${dataSet}.yaml`;
