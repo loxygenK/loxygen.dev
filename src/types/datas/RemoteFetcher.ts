@@ -1,40 +1,41 @@
 import axios from "axios";
 import yaml from "js-yaml";
+import { Achievement } from "./Acheivement";
+import { Fundamental } from "./Fundamental";
+import { Technical } from "./Techinal";
 
 export type DataSet = "achievements" | "fundamental" | "technical";
 
-const DataSetURLs: Map<DataSet, string> = new Map([
-  [
-    "achievements",
-    "https://raw.githubusercontent.com/loxygenK/loxygenk.d/main/achievements.yaml",
-  ],
-  [
-    "fundamental",
-    "https://raw.githubusercontent.com/loxygenK/loxygenk.d/main/fundamental.yaml",
-  ],
-  [
-    "technical",
-    "https://raw.githubusercontent.com/loxygenK/loxygenk.d/main/technical.yaml",
-  ],
-]);
+/* eslint-disable @typescript-eslint/ban-types */
+async function fetchFromDefaultDataSet(
+  dataSet: DataSet
+): Promise<object | undefined> {
+  /* eslint-enable */
 
-export async function fetchFromDefaultDataSet(dataSet: DataSet): Promise<object | null> {
-  // Get url; if the url is available, stop the operation
   const url =
     "https://raw.githubusercontent.com/loxygenK/loxygenk.d" +
     `/main/${dataSet}.yaml`;
-  if (url == null) return null;
 
-  // Get from remote; if failed, return null
   const result = await axios.get(url);
-  if (result.status !== 200) return null;
+  if (result.status !== 200) return;
 
-  // Parse fetched data; if the data was invalid, return null
-  const parsedData = yaml.safeLoad(result.data);
-  if (typeof parsedData !== "object") return null;
-  console.log((parsedData as any).name);
-  console.log(typeof parsedData);
-  
-  // Return the parsed data
-  return parsedData;
+  const converted = yaml.safeLoad(result.data);
+  if (converted == null || typeof converted !== "object") return;
+
+  return converted;
+}
+
+export async function fetchAchievements(): Promise<Achievement | undefined> {
+  const data = await fetchFromDefaultDataSet("achievements");
+  return data as Achievement;
+}
+
+export async function fetchFundamentals(): Promise<Fundamental | undefined> {
+  const data = await fetchFromDefaultDataSet("fundamental");
+  return data as Fundamental;
+}
+
+export async function fetchTechnical(): Promise<Technical | undefined> {
+  const data = await fetchFromDefaultDataSet("technical");
+  return data as Technical;
 }
