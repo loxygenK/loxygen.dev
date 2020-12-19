@@ -71,7 +71,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     return (
       <AppRootWrapper>
         <Header />
-        {<Splashscreen />}
+        {/*<Splashscreen />*/}
         <Expand>
           <AppContentWrapper>
             <Gretting />
