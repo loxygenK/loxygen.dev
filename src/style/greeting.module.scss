@@ -1,0 +1,12 @@
+@import "./variable/Colors.module.scss";
+
+.greeting {
+  text-align: center;
+
+  .message {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: $SubTextColor;
+  }
+
+}
