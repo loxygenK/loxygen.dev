@@ -1,9 +1,12 @@
 export type Styles = {
   anchor: string;
+  blink: string;
   caption: string;
+  cursor: string;
   footer: string;
   header: string;
   heading: string;
+  terminal: string;
   title: string;
 };
 
