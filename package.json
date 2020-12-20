@@ -70,7 +70,7 @@
     "fix:prettier": "find src/ -regex '.+\\.[jt]sx?' | xargs prettier -w",
     "start": "yarn dev",
     "dev": "webpack serve",
-    "css": "tcm src/style -o src/style/types",
+    "css": "tsm src/style/**/*.module.scss -n dashes -e default",
     "css:once": "yarn css",
     "css:watch": "yarn css -w"
   },
