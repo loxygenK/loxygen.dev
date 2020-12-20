@@ -1,4 +1,5 @@
 export type Styles = {
+  footer: string;
   header: string;
   title: string;
 };
