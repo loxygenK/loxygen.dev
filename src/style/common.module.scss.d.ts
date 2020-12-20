@@ -4,6 +4,7 @@ export type Styles = {
   caption: string;
   cursor: string;
   expand: string;
+  flexExpand: string;
   footer: string;
   header: string;
   heading: string;
