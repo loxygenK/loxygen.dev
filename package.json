@@ -63,7 +63,10 @@
     "fix:es": "find src/ -regex '.+\\.[jt]sx?' | xargs eslint --fix",
     "fix:prettier": "find src/ -regex '.+\\.[jt]sx?' | xargs prettier -w",
     "start": "yarn dev",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "css": "tcm src/style -o src/style/types",
+    "css:once": "yarn css",
+    "css:watch": "yarn css -w"
   },
   "browser": {
     "buffer": false
