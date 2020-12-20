@@ -2,6 +2,8 @@ import { Configuration } from "webpack";
 import * as path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
+import sass from "sass";
+import fibers from "fibers";
 
 const isProduction = process.env.NODE_ENV == "production";
 const baseURL = (process.env.BASE_URL == null
@@ -15,9 +17,10 @@ const config: Configuration = {
     index: path.join(__dirname, "src", "index.tsx")
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".module.scss"],
     alias: {
-      "@app": path.resolve(__dirname, "src")
+      "@app": path.resolve(__dirname, "src"),
+      "@css": path.resolve(__dirname, "src/style")
     }
   },
   plugins: [
@@ -43,6 +46,34 @@ const config: Configuration = {
         use: [
           { loader: "babel-loader" },
           { loader: "ts-loader" }
+        ]
+      },
+      {
+        test: /\.module.scss$/,
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader?modules",
+            options: {
+              sourceMap: !isProduction,
+              importLoaders: 1,
+              modules: {
+                auto: true,
+                localIdentName: isProduction ? "[hash:base64:8]" : "[path][name]__[local]",
+                exportLocalsConvention: "dashesOnly",
+              }
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: !isProduction,
+              implementation: sass,
+              sassOptions: {
+                fiber: fibers
+              },
+            }
+          }
         ]
       }
     ]
