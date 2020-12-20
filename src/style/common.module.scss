@@ -58,6 +58,19 @@
 
 }
 
+.expand {
+  width: 100%;
+}
+
+.reset {
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background: inherit;
+  border: inherit;
+  outline: inherit;
+}
+
 @keyframes blink {
   0% {
     opacity: 100%;

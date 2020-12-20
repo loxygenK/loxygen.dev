@@ -1,19 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
+import style from "@css/common.module.scss";
 import TerminalStyle from "../common/TerminalStyle";
-
-const UnstyledInput = styled.input`
-  width: 100%;
-
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  background: inherit;
-  border: inherit;
-  outline: inherit;
-
-  transition: 0.5s;
-`;
 
 type TerminalInputProps = {
   prompt?: string;
@@ -59,7 +46,8 @@ export class TerminalInput extends React.Component<
   render() {
     return (
       <TerminalStyle>
-        <UnstyledInput
+        <input
+          className={style.expand + " " + style.reset}
           value={this.prompt + this.state.typedChar}
           onChange={(e) => this.handleChange(e)}
           onKeyDown={(e) => this.handleSubmit(e)}
