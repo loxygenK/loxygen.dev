@@ -1,6 +1,9 @@
 export type Styles = {
+  anchor: string;
+  caption: string;
   footer: string;
   header: string;
+  heading: string;
   title: string;
 };
 

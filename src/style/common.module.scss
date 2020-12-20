@@ -23,3 +23,26 @@
   text-align: center;
   border-top: 1px dashed $SubTextColor;
 }
+
+.heading {
+  width: 100%;
+  padding: 0.2em 0.75em 0.4em;
+  margin: 0.5em 0;
+  margin-left: calc(-0.75em - 3px);
+  border-bottom: 1px solid $SubTextColor;
+  border-left: 3px solid $SubTextColor;
+
+  .caption {
+    padding: 0;
+    margin: 0;
+    margin-bottom: -0.03em;
+    line-height: 120%;
+  }
+
+  .anchor {
+    font-family: "Fira Mono", monospace;
+    font-size: 0.75em;
+    color: $SubTextColor;
+  }
+
+}
