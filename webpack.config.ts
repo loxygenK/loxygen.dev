@@ -15,9 +15,10 @@ const config: Configuration = {
     index: path.join(__dirname, "src", "index.tsx")
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".module.css"],
     alias: {
-      "@app": path.resolve(__dirname, "src")
+      "@app": path.resolve(__dirname, "src"),
+      "@css": path.resolve(__dirname, "src/style")
     }
   },
   plugins: [
