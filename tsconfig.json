@@ -14,7 +14,7 @@
     "baseUrl": "src",
     "paths": {
       "@app/*": ["./*"],
-      "@css/*": ["./style/types/*"]
+      "@css/*": ["./style/*"]
     }
   },
   "ts-node": {
