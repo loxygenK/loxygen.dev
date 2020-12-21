@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import style from "@css/app.module.scss";
+import common from "@css/common.module.scss";
 import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
-import * as Colors from "@app/style/Colors";
 import { Gretting } from "./pages/elements/greeting/Greeting";
 import { Introduction } from "./pages/elements/introduction/Introduction";
 import {
@@ -13,30 +13,7 @@ import {
 import { Technical } from "./types/datas/Techinal";
 import { Achievement } from "./types/datas/Acheivement";
 import { Fundamental } from "./types/datas/Fundamental";
-
-const AppRootWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: "M PLUS 1p", sans-serif;
-  color: ${Colors.MainTextColor};
-  background-color: ${Colors.MainBackground};
-`;
-
-const Expand = styled.div`
-  flex: 1;
-`;
-
-const Centerize = styled.div`
-  text-align: center;
-`;
-
-const AppContentWrapper = styled.div`
-  max-width: 45em;
-  padding: 1em;
-  margin: 0 auto;
-  word-wrap: break-word;
-`;
+import Splashscreen from "./pages/splash/SplashScreen";
 
 type State = {
   achievement?: Achievement;
@@ -70,24 +47,24 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
 
   render() {
     return (
-      <AppRootWrapper>
+      <div className={style.appRoot}>
         <Header />
-        {/*<Splashscreen />*/}
-        <Expand>
-          <AppContentWrapper>
+        <Splashscreen />
+        <div className={common.flexExpand}>
+          <div className={style.appContent}>
             <Gretting />
             {this.buildContent()}
-          </AppContentWrapper>
-        </Expand>
+          </div>
+        </div>
         <Footer />
-      </AppRootWrapper>
+      </div>
     );
   }
 
   buildContent(): React.ReactNode {
     if (this.state.loading)
-      return <Centerize>This is taking unexpectedly long time...</Centerize>;
-    if (this.state.fundamental == null) return <Centerize>boom</Centerize>;
+      return <div>This is taking unexpectedly long time...</div>;
+    if (this.state.fundamental == null) return <div>boom</div>;
     return (
       <>
         <Introduction data={this.state.fundamental} />

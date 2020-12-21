@@ -1,0 +1,19 @@
+@import "./variable/Colors.module.scss";
+
+@keyframes shake {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+.icon {
+  border: 3px solid #c8ccd0;
+  border-radius: 9999em;
+}
+
+.shaking {
+  animation: 3s shake ease-in-out infinite alternate;
+}

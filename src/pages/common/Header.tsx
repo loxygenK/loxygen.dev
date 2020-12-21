@@ -1,24 +1,9 @@
 import * as React from "react";
 
-import * as Colors from "@app/style/Colors";
-import styled from "styled-components";
 import { TerminalInput } from "../miscs/TerminalInput";
 import { Command } from "@app/types/Command";
 
-const HeaderRoot = styled.div`
-  box-sizing: border-box;
-  width: 100vw;
-  padding: 1em;
-  margin-bottom: 1.5em;
-  color: ${Colors.WhiteTextColor};
-  text-align: center;
-  background-color: ${Colors.AccentBackground};
-`;
-
-const HeaderTitle = styled.div`
-  font-size: 1.5em;
-  font-weight: 700;
-`;
+import common from "@css/common.module.scss";
 
 type HeaderState = {
   typedChar: string;
@@ -37,18 +22,16 @@ export class Header extends React.Component<
 
   render() {
     return (
-      <header>
-        <HeaderRoot>
-          <HeaderTitle>
-            <TerminalInput
-              prompt="[visitor@flisan ~]$ "
-              onEnter={(e) => {
-                console.log(e);
-                console.log(Command.parse(e));
-              }}
-            />
-          </HeaderTitle>
-        </HeaderRoot>
+      <header className={common.header}>
+        <div className={common.title}>
+          <TerminalInput
+            prompt="[visitor@flisan ~]$ "
+            onEnter={(e) => {
+              console.log(e);
+              console.log(Command.parse(e));
+            }}
+          />
+        </div>
       </header>
     );
   }

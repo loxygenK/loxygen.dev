@@ -1,17 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
 import { MyIcon } from "./MyIcon";
-import * as Colors from "@app/style/Colors";
-
-const GreetingRoot = styled.div`
-  text-align: center;
-`;
-
-const GreetingMessage = styled.div`
-  font-size: 1.25em;
-  font-weight: bold;
-  color: ${Colors.SubTextColor};
-`;
+import style from "@css/greeting.module.scss";
 
 const GreetingMessageList = [
   "Hi! Thank you for visiting here!",
@@ -24,15 +13,15 @@ const GreetingMessageList = [
 ];
 
 export const Gretting = () => (
-  <GreetingRoot>
+  <div className={style.greeting}>
     <MyIcon />
     <br />
-    <GreetingMessage>
+    <div className={style.message}>
       {
         GreetingMessageList[
           Math.floor(Math.random() * GreetingMessageList.length)
         ]
       }
-    </GreetingMessage>
-  </GreetingRoot>
+    </div>
+  </div>
 );

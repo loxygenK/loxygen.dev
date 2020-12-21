@@ -1,0 +1,82 @@
+@import "./variable/Colors.module.scss";
+
+.header {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  color: $WhiteTextColor;
+  text-align: center;
+  background-color: $AccentBackground;
+
+  .title {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+}
+
+.footer {
+  padding: 0.5em;
+  margin: 0 3em;
+  color: $SubTextColor;
+  text-align: center;
+  border-top: 1px dashed $SubTextColor;
+}
+
+.heading {
+  width: 100%;
+  padding: 0.2em 0.75em 0.4em;
+  margin: 0.5em 0;
+  margin-left: calc(-0.75em - 3px);
+  border-bottom: 1px solid $SubTextColor;
+  border-left: 3px solid $SubTextColor;
+
+  .caption {
+    padding: 0;
+    margin: 0;
+    margin-bottom: -0.03em;
+    line-height: 120%;
+  }
+
+  .anchor {
+    @extend .terminal;
+    font-size: 0.75em;
+    color: $SubTextColor;
+  }
+}
+
+.terminal {
+  font-family: "Fira Mono", monospace;
+}
+
+.cursor {
+  margin-left: 0.1em;
+  border-left: 2px solid #777;
+  animation: 1s step-start infinite blink;
+}
+
+.expand {
+  width: 100%;
+}
+
+.flex-expand {
+  flex: 1;
+}
+
+.reset {
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background: inherit;
+  border: inherit;
+  outline: inherit;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+}

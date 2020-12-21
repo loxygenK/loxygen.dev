@@ -1,0 +1,41 @@
+@import "variable/Colors.module.scss";
+
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  padding: 0.2em;
+
+  font-size: 2.3em;
+  font-weight: 700;
+  color: $WhiteTextColor;
+  text-align: center;
+
+  overflow-wrap: anywhere;
+  background-color: $BlackBackground;
+}
+
+.slidingout {
+  animation: 0.5s cubic-bezier(0.14, 0.59, 0.4, 0.83) slideout forwards;
+}
+
+@keyframes slideout {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+    display: none;
+  }
+}
