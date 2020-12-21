@@ -15,9 +15,11 @@ const Splashscreen = () => {
     return () => clearInterval(timer);
   }, [setIndex]);
 
-  const shouldBeSliding = (index > (message.length + 7));
+  const shouldBeSliding = index > message.length + 7;
   return (
-    <div className={`${style.splash} ${shouldBeSliding ? style.slidingout : ""}`}>
+    <div
+      className={`${style.splash} ${shouldBeSliding ? style.slidingout : ""}`}
+    >
       <TerminalStyle blinking>{message.substring(0, index)}</TerminalStyle>
     </div>
   );
