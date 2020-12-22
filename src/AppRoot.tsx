@@ -1,6 +1,6 @@
 import React from "react";
 import style from "@css/app.module.scss";
-import common from "@css/common.module.scss";
+import general from "@css/general.module.scss";
 import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
 import { Gretting } from "./pages/elements/greeting/Greeting";
@@ -50,7 +50,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
       <div className={style.appRoot}>
         <Header />
         <Splashscreen />
-        <div className={common.flexExpand}>
+        <div className={general.flexExpand}>
           <div className={style.appContent}>
             <Gretting />
             {this.buildContent()}

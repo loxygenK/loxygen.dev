@@ -3,12 +3,9 @@ export type Styles = {
   blink: string;
   caption: string;
   cursor: string;
-  expand: string;
-  flexExpand: string;
   footer: string;
   header: string;
   heading: string;
-  reset: string;
   terminal: string;
   title: string;
 };

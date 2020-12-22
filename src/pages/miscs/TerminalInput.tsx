@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "@css/common.module.scss";
+import style from "@css/general.module.scss";
 import TerminalStyle from "../common/TerminalStyle";
 
 type TerminalInputProps = {
