@@ -50,9 +50,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
       <div className={style.appRoot}>
         <Header />
         {/*<Splashscreen />*/}
-        <div className={general.flexExpand}>
-          {this.buildContent()}
-        </div>
+        <div className={general.flexExpand}>{this.buildContent()}</div>
         <Footer />
       </div>
     );

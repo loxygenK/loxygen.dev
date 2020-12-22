@@ -16,17 +16,17 @@
   padding: 2em 0;
 
   .name-container {
-    max-width: 20em;
-    display: inline-flex;
-    vertical-align: top;
-    height: 100%;
     box-sizing: border-box;
-    padding-left: 2em;
+    display: inline-flex;
     align-items: center;
+    max-width: 20em;
+    height: 100%;
+    padding-left: 2em;
     text-align: left;
+    vertical-align: top;
   }
 
-  .name { 
+  .name {
     padding-top: 1.5em;
   }
 
@@ -40,8 +40,7 @@
   }
   .sub-name {
     font-family: $TerminalFont;
-    color: $SubTextColor;
     font-size: 0.8em;
+    color: $SubTextColor;
   }
-
 }
