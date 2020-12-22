@@ -1,0 +1,22 @@
+@import "variable/font.module.scss";
+
+.expand {
+  width: 100%;
+}
+
+.flex-expand {
+  flex: 1;
+}
+
+.reset {
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  background: inherit;
+  border: inherit;
+  outline: inherit;
+}
+
+.terminal {
+  font-family: $TerminalFont;
+}

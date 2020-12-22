@@ -1,10 +1,11 @@
 @import "variable/Colors.module.scss";
+@import "variable/font.module.scss";
 
 .app-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: $MainFont;
   color: $MainTextColor;
   background-color: $MainBackground;
 }

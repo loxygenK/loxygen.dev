@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "@css/splash.module.scss";
-import TerminalStyle from "../common/TerminalStyle";
+import TerminalStyle from "../common/Terminal";
 
 const message = "ssh visitor@flisan startx";
 const charDelay = 0.05;
