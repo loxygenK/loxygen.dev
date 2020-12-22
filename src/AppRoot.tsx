@@ -49,12 +49,9 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     return (
       <div className={style.appRoot}>
         <Header />
-        <Splashscreen />
+        {/*<Splashscreen />*/}
         <div className={general.flexExpand}>
-          <div className={style.appContent}>
-            <Gretting />
-            {this.buildContent()}
-          </div>
+          {this.buildContent()}
         </div>
         <Footer />
       </div>
@@ -67,7 +64,10 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     if (this.state.fundamental == null) return <div>boom</div>;
     return (
       <>
-        <Introduction data={this.state.fundamental} />
+        <Gretting name={this.state.fundamental.name} />
+        <div className={style.appContent}>
+          <Introduction data={this.state.fundamental} />
+        </div>
       </>
     );
   }
