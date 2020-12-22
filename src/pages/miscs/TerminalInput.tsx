@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "@css/general.module.scss";
-import TerminalStyle from "../common/TerminalStyle";
+import TerminalStyle from "../common/Terminal";
 
 type TerminalInputProps = {
   prompt?: string;
