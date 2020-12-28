@@ -1,13 +1,13 @@
 export type Styles = {
-  anchor: string;
   blink: string;
-  caption: string;
   cursor: string;
+  decorator: string;
   expand: string;
   flexExpand: string;
   footer: string;
   heading: string;
   reset: string;
+  sectionContainer: string;
   terminal: string;
 };
 
