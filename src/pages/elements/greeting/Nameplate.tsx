@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "@css/greeting.module.scss";
+import style from "@css/header.module.scss";
 import { Fundamental } from "@app/types/datas/Fundamental";
 
 export const Nameplate = (props: { info: Fundamental }) => (

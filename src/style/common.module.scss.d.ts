@@ -6,7 +6,6 @@ export type Styles = {
   expand: string;
   flexExpand: string;
   footer: string;
-  header: string;
   heading: string;
   reset: string;
   terminal: string;
