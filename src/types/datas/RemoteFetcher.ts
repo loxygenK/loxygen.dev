@@ -16,8 +16,6 @@ async function fetchFromDefaultDataSet(
     "https://raw.githubusercontent.com/loxygenK/loxygenk.d" +
     `/main/${dataSet}.yaml`;
 
-  console.log(url);
-
   const result = await axios.get(url);
   if (result.status !== 200) return;
 
