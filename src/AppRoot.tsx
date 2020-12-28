@@ -1,8 +1,8 @@
 import React from "react";
 import style from "@css/app.module.scss";
 import general from "@css/general.module.scss";
-import { Footer } from "@app/pages/common/Footer";
-import { Header } from "@app/pages/common/Header";
+import { Footer } from "@app/pages/footer/Footer";
+import { Header } from "@app/pages/header/Header";
 import { Introduction } from "./pages/elements/introduction/Introduction";
 import {
   fetchAchievements,

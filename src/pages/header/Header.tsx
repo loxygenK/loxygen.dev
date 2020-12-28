@@ -1,8 +1,8 @@
 import * as React from "react";
 
 import style from "@css/header.module.scss";
-import { MyIcon } from "@app/pages/common/MyIcon";
-import { Nameplate } from "@app/pages/elements/greeting/Nameplate";
+import { MyIcon } from "@app/pages/header/MyIcon";
+import { Nameplate } from "@app/pages/header/Nameplate";
 import { Fundamental } from "@app/types/datas/Fundamental";
 
 type HeaderProps = {
