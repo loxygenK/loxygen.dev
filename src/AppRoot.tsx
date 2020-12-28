@@ -12,6 +12,7 @@ import {
 import { Technical } from "./types/datas/Techinal";
 import { Achievement } from "./types/datas/Acheivement";
 import { Fundamental } from "./types/datas/Fundamental";
+import Splashscreen from "./pages/splash/SplashScreen";
 
 type State = {
   achievement?: Achievement;
@@ -51,7 +52,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     return (
       <div className={style.appRoot}>
         <Header info={this.state.fundamental} />
-        {/*<Splashscreen />*/}
+        <Splashscreen />
         <div className={general.flexExpand}>
           <div className={style.appContent}>
             <Introduction data={this.state.fundamental} />
@@ -60,9 +61,5 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
         <Footer />
       </div>
     );
-  }
-
-  buildContent(): React.ReactNode {
-    return <></>;
   }
 }
