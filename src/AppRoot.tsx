@@ -3,7 +3,6 @@ import style from "@css/app.module.scss";
 import general from "@css/general.module.scss";
 import { Footer } from "@app/pages/common/Footer";
 import { Header } from "@app/pages/common/Header";
-import { Gretting } from "./pages/elements/greeting/Greeting";
 import { Introduction } from "./pages/elements/introduction/Introduction";
 import {
   fetchAchievements,
@@ -13,7 +12,6 @@ import {
 import { Technical } from "./types/datas/Techinal";
 import { Achievement } from "./types/datas/Acheivement";
 import { Fundamental } from "./types/datas/Fundamental";
-import Splashscreen from "./pages/splash/SplashScreen";
 
 type State = {
   achievement?: Achievement;
@@ -46,27 +44,25 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   }
 
   render() {
+    if (this.state.loading)
+      return <div>This is taking unexpectedly long time...</div>;
+    if (this.state.fundamental == null)
+      return <div>Failed to fetch the data.</div>;
     return (
       <div className={style.appRoot}>
-        <Header />
+        <Header info={this.state.fundamental} />
         {/*<Splashscreen />*/}
-        <div className={general.flexExpand}>{this.buildContent()}</div>
+        <div className={general.flexExpand}>
+          <div className={style.appContent}>
+            <Introduction data={this.state.fundamental} />
+          </div>
+        </div>
         <Footer />
       </div>
     );
   }
 
   buildContent(): React.ReactNode {
-    if (this.state.loading)
-      return <div>This is taking unexpectedly long time...</div>;
-    if (this.state.fundamental == null) return <div>boom</div>;
-    return (
-      <>
-        <Gretting name={this.state.fundamental.name} />
-        <div className={style.appContent}>
-          <Introduction data={this.state.fundamental} />
-        </div>
-      </>
-    );
+    return <></>;
   }
 }

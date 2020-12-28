@@ -10,7 +10,6 @@ export type Styles = {
   heading: string;
   reset: string;
   terminal: string;
-  title: string;
 };
 
 export type ClassNames = keyof Styles;

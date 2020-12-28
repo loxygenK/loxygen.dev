@@ -1,15 +1,21 @@
 import * as React from "react";
 import style from "@css/greeting.module.scss";
-import { MyIcon } from "./MyIcon";
-import { Abbreviation } from "@app/types/datas/Fundamental";
+import { Fundamental } from "@app/types/datas/Fundamental";
 
-export const Nameplate = (props: { name: Abbreviation }) => (
+export const Nameplate = (props: { info: Fundamental }) => (
   <div className={style.nameplate}>
-    <MyIcon />
     <span className={style.nameContainer}>
-      <div className={style.name}>
-        <div className={style.mainName}>{props.name.short}</div>
-        <div className={style.subName}>{props.name.long}</div>
+      <div>
+        <div className={style.title}>
+          {props.info.belong.school.name.long}
+          <br />
+          {props.info.belong.school.class.long}
+        </div>
+        <div className={style.mainName}>{props.info.name.short}</div>
+        <div className={style.subName}>
+          <span className={style.prefix}>a.k.a. </span>
+          {props.info.name.long}
+        </div>
       </div>
     </span>
   </div>

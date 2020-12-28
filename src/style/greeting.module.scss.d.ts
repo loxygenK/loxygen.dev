@@ -2,10 +2,11 @@ export type Styles = {
   greeting: string;
   mainName: string;
   message: string;
-  name: string;
   nameContainer: string;
   nameplate: string;
+  prefix: string;
   subName: string;
+  title: string;
 };
 
 export type ClassNames = keyof Styles;
