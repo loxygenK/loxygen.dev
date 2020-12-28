@@ -1,9 +1,8 @@
 import React from "react";
 import style from "@css/app.module.scss";
 import general from "@css/general.module.scss";
-import { Footer } from "@app/pages/common/Footer";
-import { Header } from "@app/pages/common/Header";
-import { Gretting } from "./pages/elements/greeting/Greeting";
+import { Footer } from "@app/pages/footer/Footer";
+import { Header } from "@app/pages/header/Header";
 import { Introduction } from "./pages/elements/introduction/Introduction";
 import {
   fetchAchievements,
@@ -48,24 +47,26 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   render() {
     return (
       <div className={style.appRoot}>
-        <Header />
-        {/*<Splashscreen />*/}
-        <div className={general.flexExpand}>{this.buildContent()}</div>
-        <Footer />
+        <Splashscreen />
+        {this.buildLazyContents()}
       </div>
     );
   }
 
-  buildContent(): React.ReactNode {
+  buildLazyContents() {
     if (this.state.loading)
       return <div>This is taking unexpectedly long time...</div>;
-    if (this.state.fundamental == null) return <div>boom</div>;
+    if (this.state.fundamental == null)
+      return <div>Failed to fetch the data.</div>;
     return (
       <>
-        <Gretting name={this.state.fundamental.name} />
-        <div className={style.appContent}>
-          <Introduction data={this.state.fundamental} />
+        <Header info={this.state.fundamental} />
+        <div className={general.flexExpand}>
+          <div className={style.appContent}>
+            <Introduction data={this.state.fundamental} />
+          </div>
         </div>
+        <Footer />
       </>
     );
   }

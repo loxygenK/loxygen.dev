@@ -1,16 +1,14 @@
 export type Styles = {
-  anchor: string;
   blink: string;
-  caption: string;
   cursor: string;
+  decorator: string;
   expand: string;
   flexExpand: string;
   footer: string;
-  header: string;
   heading: string;
   reset: string;
+  sectionContainer: string;
   terminal: string;
-  title: string;
 };
 
 export type ClassNames = keyof Styles;

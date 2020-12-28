@@ -21,7 +21,8 @@ const config: Configuration = {
     alias: {
       "@app": path.resolve(__dirname, "src"),
       "@css": path.resolve(__dirname, "src/style")
-    }
+    },
+    fallback: { "buffer": false }
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Heading } from "./Heading";
+import styles from "@css/common.module.scss";
 
 export const Section = (props: {
-  caption: string;
-  anchor: string;
+  name: string;
   children?: React.ReactNode;
 }) => (
   <section>
-    <Heading caption={props.caption} anchor={props.anchor} />
-    {props.children}
+    <Heading name={props.name} />
+    <div className={styles.sectionContainer}>{props.children}</div>
   </section>
 );
