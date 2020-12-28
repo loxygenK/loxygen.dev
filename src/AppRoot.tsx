@@ -45,21 +45,29 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   }
 
   render() {
+    return (
+      <div className={style.appRoot}>
+        <Splashscreen />
+        {this.buildLazyContents()}
+      </div>
+    );
+  }
+
+  buildLazyContents() {
     if (this.state.loading)
       return <div>This is taking unexpectedly long time...</div>;
     if (this.state.fundamental == null)
       return <div>Failed to fetch the data.</div>;
     return (
-      <div className={style.appRoot}>
+      <>
         <Header info={this.state.fundamental} />
-        <Splashscreen />
         <div className={general.flexExpand}>
           <div className={style.appContent}>
             <Introduction data={this.state.fundamental} />
           </div>
         </div>
         <Footer />
-      </div>
+      </>
     );
   }
 }
