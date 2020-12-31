@@ -9,6 +9,7 @@ export type Styles = {
   reset: string;
   sectionContainer: string;
   subheading: string;
+  subsectionContainer: string;
   terminal: string;
 };
 
