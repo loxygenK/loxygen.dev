@@ -8,6 +8,7 @@ export type Styles = {
   heading: string;
   reset: string;
   sectionContainer: string;
+  subheading: string;
   terminal: string;
 };
 

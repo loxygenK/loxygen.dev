@@ -26,6 +26,14 @@
   }
 }
 
+.subheading {
+  margin-bottom: 0.25em;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: $SubTextColor;
+  @extend .terminal;
+}
+
 .section-container {
   padding: 1em 1.5em;
   border-left: 2px solid $AccentBackground;
