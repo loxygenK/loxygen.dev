@@ -26,9 +26,23 @@
   }
 }
 
+.subheading {
+  margin-bottom: 0.25em;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: $SubTextColor;
+  @extend .terminal;
+}
+
 .section-container {
   padding: 1em 1.5em;
   border-left: 2px solid $AccentBackground;
+}
+
+.subsection-container {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  line-height: 1.25em;
 }
 
 .cursor {
