@@ -1,9 +1,15 @@
 @import "../variable/Colors.module";
 @import "../variable/font.module";
+@import "../construct/responsive.module";
 
 .program-list {
   display: grid;
   grid-template-columns: repeat(2, calc(100% / 2));
+
+  @include if_screen("small") {
+    grid-template-columns: repeat(1, calc(100% / 1));
+  }
+
 }
 
 .program-container {
@@ -25,13 +31,13 @@
       border-bottom: 2px dotted $SubTextColor;
 
       .name {
-        font-size: 1.75em;
+        font-size: 1.7em;
         line-height: 1.1em;
       }
 
       .used-tech {
-        font-size: 0.95em;
-        line-height: 1.2em;
+        font-size: 0.75em;
+        line-height: 1.3em;
       }
     }
 
@@ -52,6 +58,7 @@
         height: 1.2em;
         margin-right: 0.5em;
         margin-bottom: 0.2em;
+        font-size: 0.8em;
       }
     }
 
@@ -69,7 +76,7 @@
   right: calc(14em * (0.7071 - 1) + 0.25em);
   width: 10em;
   padding: 0.1em;
-  font-size: 1.1em;
+  font-size: 0.85em;
   font-weight: 900;
   text-align: center;
   background-color: $SubTextColor;
