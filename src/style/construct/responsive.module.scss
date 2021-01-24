@@ -1,6 +1,6 @@
 $breakpoints: (
-  'small': 'screen and (max-width: 768px)',
-  'normal': 'screen and (min-width: 768px)',
+  "small": "screen and (max-width: 768px)",
+  "normal": "screen and (min-width: 768px)",
 );
 
 @mixin if_screen($breakpoint) {

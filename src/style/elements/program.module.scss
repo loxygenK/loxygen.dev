@@ -9,7 +9,6 @@
   @include if_screen("small") {
     grid-template-columns: repeat(1, calc(100% / 1));
   }
-
 }
 
 .program-container {
