@@ -12,6 +12,7 @@ export type Program = {
   status: Status;
   used?: string[];
   related?: string[];
+  badges?: string[];
 };
 
 export type Trace = {

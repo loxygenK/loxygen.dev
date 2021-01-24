@@ -1,0 +1,84 @@
+@import "../variable/Colors.module";
+@import "../variable/font.module";
+@import "../construct/responsive.module";
+
+.program-list {
+  display: grid;
+  grid-template-columns: repeat(2, calc(100% / 2));
+
+  @include if_screen("small") {
+    grid-template-columns: repeat(1, calc(100% / 1));
+  }
+}
+
+.program-container {
+  position: relative;
+  margin: 0.5em;
+  overflow: hidden;
+  color: $WhiteTextColor;
+  background-color: $AccentBackground;
+
+  box-shadow: rgb(0 0 0 / 25%) 0 10px 10px 0;
+
+  .program {
+    padding: 0.6em 0.75em;
+
+    .title {
+      padding-bottom: 0.3em;
+      margin: 0.3em 0;
+      font-weight: 900;
+      border-bottom: 2px dotted $SubTextColor;
+
+      .name {
+        font-size: 1.7em;
+        line-height: 1.1em;
+      }
+
+      .used-tech {
+        font-size: 0.75em;
+        line-height: 1.3em;
+      }
+    }
+
+    .description {
+      margin: 0.3em 0 0;
+    }
+
+    .for {
+      padding-top: 0.15em;
+      font-size: 0.8em;
+      font-style: italic;
+    }
+
+    .badge {
+      margin: 0.3em 0;
+      line-height: 1em;
+      & > * {
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+        font-size: 0.8em;
+      }
+    }
+
+    .url {
+      font-family: $TerminalFont;
+      font-size: 0.75em;
+      line-height: 110%;
+    }
+  }
+}
+
+.progress-band {
+  position: absolute;
+  top: calc(10em * (0.7071 - 1) + 0.25em);
+  right: calc(14em * (0.7071 - 1) + 0.25em);
+  width: 10em;
+  padding: 0.1em;
+  font-size: 0.85em;
+  font-weight: 900;
+  text-align: center;
+  background-color: $SubTextColor;
+  transform: rotate(45deg);
+  transform-origin: bottom left;
+}
