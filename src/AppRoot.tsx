@@ -13,6 +13,7 @@ import { Technical } from "./types/datas/Techinal";
 import { Achievement } from "./types/datas/Acheivement";
 import { Fundamental } from "./types/datas/Fundamental";
 import Splashscreen from "./pages/splash/SplashScreen";
+import { Works } from "@app/pages/elements/works/Works";
 
 type State = {
   achievement?: Achievement;
@@ -47,7 +48,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   render() {
     return (
       <div className={style.appRoot}>
-        <Splashscreen />
+        {/*<Splashscreen />*/}
         {this.buildLazyContents()}
       </div>
     );
@@ -58,12 +59,15 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
       return <div>This is taking unexpectedly long time...</div>;
     if (this.state.fundamental == null)
       return <div>Failed to fetch the data.</div>;
+    if (this.state.achievement == null)
+      return <div>Failed to fetch the data.</div>;
     return (
       <>
         <Header info={this.state.fundamental} />
         <div className={general.flexExpand}>
           <div className={style.appContent}>
             <Introduction data={this.state.fundamental} />
+            <Works works={this.state.achievement.developed} />
           </div>
         </div>
         <Footer />
