@@ -9,11 +9,11 @@
 .program-container {
   position: relative;
   margin: 0.5em;
+  overflow: hidden;
   color: $WhiteTextColor;
   background-color: $AccentBackground;
 
   box-shadow: rgb(0 0 0 / 25%) 0 10px 10px 0;
-  overflow: hidden;
 
   .program {
     padding: 0.6em 0.75em;
@@ -21,8 +21,8 @@
     .title {
       padding-bottom: 0.3em;
       margin: 0.3em 0;
-      border-bottom: 2px dotted $SubTextColor;
       font-weight: 900;
+      border-bottom: 2px dotted $SubTextColor;
 
       .name {
         font-size: 1.75em;
@@ -68,11 +68,11 @@
   top: calc(10em * (0.7071 - 1) + 0.25em);
   right: calc(14em * (0.7071 - 1) + 0.25em);
   width: 10em;
-  text-align: center;
   padding: 0.1em;
-  font-weight: 900;
   font-size: 1.1em;
-  transform-origin: bottom left;
-  transform: rotate(45deg);
+  font-weight: 900;
+  text-align: center;
   background-color: $SubTextColor;
+  transform: rotate(45deg);
+  transform-origin: bottom left;
 }

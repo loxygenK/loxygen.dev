@@ -48,7 +48,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
   render() {
     return (
       <div className={style.appRoot}>
-        {/*<Splashscreen />*/}
+        <Splashscreen />
         {this.buildLazyContents()}
       </div>
     );

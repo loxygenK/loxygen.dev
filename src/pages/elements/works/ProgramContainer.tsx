@@ -3,7 +3,7 @@ import * as React from "react";
 
 import style from "@css/elements/program.module.scss";
 import { ProgressBand } from "@app/pages/elements/works/ProgressBand";
-import {Anchor} from "@app/pages/miscs/Anchor";
+import { Anchor } from "@app/pages/miscs/Anchor";
 
 export const ProgramContainer = (props: { name: string; program: Program }) => {
   const usedTechnics =
@@ -26,7 +26,7 @@ export const ProgramContainer = (props: { name: string; program: Program }) => {
     props.program.badges != null ? (
       <div className={style.badge}>
         {props.program.badges.map((value, index) => (
-          <img src={value} alt={props.name} key={index}/>
+          <img src={value} alt={props.name} key={index} />
         ))}
       </div>
     ) : (
@@ -51,18 +51,12 @@ export const ProgramContainer = (props: { name: string; program: Program }) => {
     </>
   );
 
-  if(props.program.site != null){
+  if (props.program.site != null) {
     return (
       <div className={style.programContainer}>
-        <Anchor to={props.program.site} >
-          {card}
-        </Anchor>
+        <Anchor to={props.program.site}>{card}</Anchor>
       </div>
     );
   }
-  return (
-      <div className={style.programContainer}>
-          {card}
-      </div>
-  );
+  return <div className={style.programContainer}>{card}</div>;
 };
