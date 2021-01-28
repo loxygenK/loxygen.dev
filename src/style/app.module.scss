@@ -16,4 +16,21 @@
   padding: 1em;
   margin: 0 auto;
   word-wrap: break-word;
+
+  & > section {
+
+    @for $i from 1 through 100 {
+      &:nth-child(#{$i}) {
+        animation: 0.8s slide-in #{0.6 + $i * 0.05}s both;
+      }
+    }
+
+    @keyframes slide-in {
+      from {transform: translateX(-1.5em); opacity: 0;}
+      to {transform: translateX(0em); opacity: 1;}
+    }
+
+  }
+
+
 }

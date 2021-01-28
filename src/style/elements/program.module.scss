@@ -9,6 +9,24 @@
   @include if_screen("small") {
     grid-template-columns: repeat(1, calc(100% / 1));
   }
+
+  & > .program-container {
+    @for $i from 1 through 100 {
+      &:nth-child(#{$i}) {
+        animation: 0.8s slide-in #{0.7 + $i * 0.05}s both;
+      }
+    }
+    @keyframes slide-in {
+      from {
+        transform: translateX(-1.5em);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0em);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .program-container {
