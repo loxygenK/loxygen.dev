@@ -28,7 +28,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     super({});
     this.state = {
       loading: true,
-      splashFinished: false
+      splashFinished: false,
     };
   }
 
@@ -49,14 +49,14 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
 
   handleSplashFinish() {
     this.setState({
-      splashFinished: true
+      splashFinished: true,
     });
   }
 
   render() {
     return (
       <div className={style.appRoot}>
-        <Splashscreen onFinished={() => this.handleSplashFinish()}/>
+        <Splashscreen onFinished={() => this.handleSplashFinish()} />
         {this.state.splashFinished ? this.buildLazyContents() : <></>}
       </div>
     );
