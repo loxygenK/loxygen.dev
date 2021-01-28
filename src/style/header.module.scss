@@ -15,10 +15,35 @@
   background-color: $AccentBackground;
 
   box-shadow: 0 2px 10px rgb(0 0 0 / 60%);
+
+  animation: 0.8s header-in 0.5s both;
+  @keyframes header-in {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  & * {
+    animation: 0.9s slide-in 0.3s both;
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: translateX(20%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }
+  }
 }
 
 .nameplate {
   display: inline-block;
+
   .name-container {
     box-sizing: border-box;
     display: inline-flex;
