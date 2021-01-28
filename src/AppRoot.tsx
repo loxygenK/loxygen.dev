@@ -20,6 +20,7 @@ type State = {
   fundamental?: Fundamental;
   technical?: Technical;
   loading: boolean;
+  splashFinished: boolean;
 };
 
 export class AppRoot extends React.Component<Record<string, unknown>, State> {
@@ -27,6 +28,7 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     super({});
     this.state = {
       loading: true,
+      splashFinished: false
     };
   }
 
@@ -45,11 +47,17 @@ export class AppRoot extends React.Component<Record<string, unknown>, State> {
     });
   }
 
+  handleSplashFinish() {
+    this.setState({
+      splashFinished: true
+    });
+  }
+
   render() {
     return (
       <div className={style.appRoot}>
-        <Splashscreen />
-        {this.buildLazyContents()}
+        <Splashscreen onFinished={() => this.handleSplashFinish()}/>
+        {this.state.splashFinished ? this.buildLazyContents() : <></>}
       </div>
     );
   }
